@@ -1,4 +1,12 @@
-{% extends 'main/base.html' %} {% load i18n %} {% block content %}
+{% extends 'main/base.html' %} {% load i18n static %} {% block content %}
+<figure class="image is-128x128 container mt-4 mb-4">
+  <img
+    src="{% static 'images/MPoeme.png' %}"
+    alt="Logo MPoeme"
+    class="has-image-centered"
+    style="margin: 0 auto"
+  />
+</figure>
 <h1 class="title is-1 has-text-centered mt-3 mb-3">{% trans "Welcome" %}</h1>
 <a href="/fr/" role="button" class="button is-dark">{% trans "French" %}</a>
 <a href="/en/" role="button" class="button is-dark">{% trans "English" %}</a>

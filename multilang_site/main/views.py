@@ -5,9 +5,10 @@ from .models import Post, Document
 import openai
 import os
 
-# Chargement de la clé API OpenAI depuis les variables d'environnement
+# clé API OpenAI depuis l'environnement
 openai.api_key = os.getenv('AI_KEY')
 
+# routes vers les langues souhaitez (fr/en)
 def switch_to_french(request):
     activate('fr')
     return redirect('/')
@@ -16,6 +17,7 @@ def switch_to_english(request):
     activate('en')
     return redirect('/')
 
+# extension de la page home 
 @csrf_exempt
 def ExtendedFront(request):
     posts = Post.objects.all()
@@ -35,7 +37,7 @@ def ExtendedFront(request):
         )
 
         response_text = (response.choices[0].message.content)
-
+    # rendu des posts du blog et de la reponse du GPT
     return render(request, 'main/ExtendedFront.html', {'posts': posts, 'response': response_text})
 
 def search_documents(query):

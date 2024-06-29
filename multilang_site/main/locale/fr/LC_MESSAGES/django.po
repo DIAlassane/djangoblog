@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-29 16:16+0200\n"
+"POT-Creation-Date: 2024-06-29 19:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
 #: main/templates/main/ExtendedFront.html:2
 msgid "Welcome"
 msgstr "Bienvenue"
@@ -44,3 +45,7 @@ msgstr "Tapez vôtre message..."
 #: main/templates/main/ExtendedFront.html:27
 msgid "Send"
 msgstr "Envoyer"
+
+#: main/templates/main/base.html:26
+msgid "by"
+msgstr "Par"

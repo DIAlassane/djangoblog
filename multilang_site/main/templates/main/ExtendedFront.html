@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %} {% load i18n %} {% block content %}
+<h1 class="title is-1 has-text-centered mt-3 mb-3">{% trans "Welcome" %}</h1>
+<a href="/fr/" role="button" class="button is-dark">{% trans "French" %}</a>
+<a href="/en/" role="button" class="button is-dark">{% trans "English" %}</a>
+
+{% for post in posts %}
+<div class="post block mt-4 box">
+  <h2 class="subtitle">{{ post.title }}</h2>
+  <small>{% trans "Posted at" %} {{ post.publication_date }}</small>
+  <p>{{ post.content }}</p>
+</div>
+{% endfor %}
+
+<!-- Interface du chatbot -->
+<div id="chatbot">
+  <h3 class="breadcrumb is-large has-text-centered">
+    {% trans "Chat with our assistant:" %}
+  </h3>
+
+  <form method="post" action="{% url 'ExtendedFront' %}">
+    {% csrf_token %} <input type="text" name="user_input" class="input is-black"
+    id="user_input" placeholder="{% trans "Type your message..." %}" />
+    <button
+      type="submit"
+      class="buttons button is-info is-justify-content-center mt-3 mb-3"
+    >
+      {% trans "Send" %}
+    </button>
+  </form>
+  {% if response %}
+  <div id="chat-log" class="mt-4 mb-4 box is-black has-text-grey">
+    assistant : {{ response }}
+  </div>
+  {% endif %}
+</div>
+
+{% endblock %}

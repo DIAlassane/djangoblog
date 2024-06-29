@@ -1,3 +1,27 @@
+# Environnement
+/diotsiaci
 /new_env/
 /diotsiaci/bin
 /diotsiaci/lib
+
+
+
+# Fichiers compilés Python
+*.pyc
+__pycache__/
+
+# Fichiers de configuration
+*.env
+.env
+multilang_site/.env
+
+# Dossiers spécifiques à Django
+db.sqlite3
+media/
+
+# Fichiers de log
+*.log
+
+# Configurations de l'éditeur
+.vscode/
+.idea/
